@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  ip: MyString
+  port: MyString
+  user: MyString
+  password: MyString
+  sysadm: false
+  root_password: MyString
+  device: 
+  type: 
+  service: 
+
+two:
+  name: MyString
+  ip: MyString
+  port: MyString
+  user: MyString
+  password: MyString
+  sysadm: false
+  root_password: MyString
+  device: 
+  type: 
+  service: 

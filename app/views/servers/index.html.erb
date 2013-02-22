@@ -1,0 +1,41 @@
+<h1>Listing servers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Ip</th>
+    <th>Port</th>
+    <th>User</th>
+    <th>Password</th>
+    <th>Sysadm</th>
+    <th>Root password</th>
+    <th>Device</th>
+    <th>Type</th>
+    <th>Service</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @servers.each do |server| %>
+  <tr>
+    <td><%= server.name %></td>
+    <td><%= server.ip %></td>
+    <td><%= server.port %></td>
+    <td><%= server.user %></td>
+    <td><%= server.password %></td>
+    <td><%= server.sysadm %></td>
+    <td><%= server.root_password %></td>
+    <td><%= server.device %></td>
+    <td><%= server.type %></td>
+    <td><%= server.service %></td>
+    <td><%= link_to 'Show', server %></td>
+    <td><%= link_to 'Edit', edit_server_path(server) %></td>
+    <td><%= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Server', new_server_path %>
