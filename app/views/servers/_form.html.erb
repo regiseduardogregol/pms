@@ -12,12 +12,24 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :device %><br />
+    <%= f.select :device_id, Device.find(:all).collect{|d| [d.name, d.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.select :type_id, Type.find(:all).collect{|t| [t.name, t.id]} %>
+  </div>
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :ip %><br />
     <%= f.text_field :ip %>
+  </div>
+  <div class="field">
+    <%= f.label :service %><br />
+    <%= f.select :service_id, Service.find(:all).collect{|s| [s.name, s.id]} %>
   </div>
   <div class="field">
     <%= f.label :port %><br />
@@ -38,18 +50,6 @@
   <div class="field">
     <%= f.label :root_password %><br />
     <%= f.text_field :root_password %>
-  </div>
-  <div class="field">
-    <%= f.label :device %><br />
-    <%= f.text_field :device %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :service %><br />
-    <%= f.text_field :service %>
   </div>
   <div class="actions">
     <%= f.submit %>

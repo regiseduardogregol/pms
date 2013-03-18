@@ -26,9 +26,9 @@
     <td><%= server.password %></td>
     <td><%= server.sysadm %></td>
     <td><%= server.root_password %></td>
-    <td><%= server.device %></td>
-    <td><%= server.type %></td>
-    <td><%= server.service %></td>
+    <td><%= server.device.name %></td>
+    <td><%= server.type.name %></td>
+    <td><%= server.service.name %></td>
     <td><%= link_to 'Show', server %></td>
     <td><%= link_to 'Edit', edit_server_path(server) %></td>
     <td><%= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
