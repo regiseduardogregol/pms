@@ -14,10 +14,18 @@
   <div class="field">
     <%= f.label :device %><br />
     <%= f.select :device_id, Device.find(:all).collect{|d| [d.name, d.id]} %>
+    <p style="display:inline;">
+      <%= link_to "Adicionar +", new_device_path, :remote => true, :onclick=>"window.open(this.href,'create_device', 'height=600, width=600');return false;" %>
+    </p>
   </div>
   <div class="field">
     <%= f.label :type %><br />
     <%= f.select :type_id, Type.find(:all).collect{|t| [t.name, t.id]} %>
+    <p style="display:inline;">
+      <%= link_to "Adicionar +", new_type_path, :remote => true, :onclick=>"window.open(this.href,'create_type', 'height=600, width=600');return false;" %>
+    </p>
+
+  <div cla
   </div>
   <div class="field">
     <%= f.label :name %><br />
@@ -30,6 +38,9 @@
   <div class="field">
     <%= f.label :service %><br />
     <%= f.select :service_id, Service.find(:all).collect{|s| [s.name, s.id]} %>
+    <p style="display:inline;">
+      <%= link_to "Adicionar +", new_service_path, :remote => true, :onclick=>"window.open(this.href,'create_service', 'height=600, width=600');return false;" %>
+    </p>
   </div>
   <div class="field">
     <%= f.label :port %><br />
