@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 gem 'unicorn'
 
+#gem 'font-awesome-sass-rails'
+
+gem 'jquery-rails'
+
 gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:

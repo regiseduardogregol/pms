@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Pms</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PMS - Password Manager System, sistema de gerênciamento de senhas para servidor">
+  <meta name="author" content="Régis Eduardo Weizenmann Gregol (regiseduardogregol@gmail.com)">
+  <link rel="shortcut icon" href="/favicon.png">
+  <%= stylesheet_link_tag "application", "bootstrap", "bootstrap.min", "bootstrap-responsive", "font-awesome.min", "font-awesome", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="nav">
-	<ul>
-		<li><a href="#">Lista</a></li>
-		<li><a href="#">Grupos</a></li>
-		<li><a href="#">Eventos</a></li>
-	</ul>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+	    <div class="container">
+	    	<form class="form-search icon-search" style="margin-top:10px;float:right;">
+			  <input type="text" class="input-medium search-query">
+			  <button type="submit" class="btn btn-mini btn-primary">Search</button>
+			</form>
+	    	<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+          	</button>
+	        <%= link_to "PMS", root_path, :class => "brand icon-key" %>
+	        <div class="nav-collapse collapse">
+	        	<ul class="nav">
+					<li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to "Home", root_path %></li>
+					<!--
+					<li class="<%= 'active' if params[:controller] == 'servers' %>"><%= link_to "List", servers_path %></li>
+					<li class="<%= 'active' if params[:controller] == 'servers' %>"><%= link_to "Group", servers_path %></li>
+					<li class="<%= 'active' if params[:controller] == 'servers' %>"><%= link_to "Events", servers_path %></li>-->
+				</ul>
+	        </div>
+        </div>
+    </div>
 </div>
-<%= yield %>
-
-</body>
+	<div class="container">
+		<%= yield %>
+	</div>
+	<hr>
+	<footer>
+	    <p>&copy; Password Manager System — 2013</p>
+	</footer>
+	<%= javascript_include_tag "application", "bootstrap" %>
+	</body>
 </html>

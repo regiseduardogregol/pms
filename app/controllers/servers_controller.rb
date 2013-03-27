@@ -24,7 +24,10 @@ class ServersController < ApplicationController
   # GET /servers/new
   # GET /servers/new.json
   def new
-    @server = Server.new
+    @devices  = Device.all
+    @types    = Type.all
+    @services = Service.all
+    @server   = Server.new
 
     respond_to do |format|
       format.html # new.html.erb

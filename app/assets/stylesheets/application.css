@@ -11,3 +11,5 @@
  *= require_self
  *= require_tree .
  */
+/*@font-face{font-family:'FontAwesome';src:url("/assets/fontawesome-webfont.eot");src:url("/assets/fontawesome-webfont.eot?#iefix"),url("/assets/fontawesome-webfont.woff"),url("/assets/fontawesome-webfont.ttf"),url("/assets/fontawesome-webfont.svg#FontAwesome");font-weight:normal;font-style:normal}*/
+body { padding-top: 60px;/* 60px to make the container go all the way to the bottom of the topbar */ }

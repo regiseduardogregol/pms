@@ -1,17 +1,18 @@
-<h1>Listing servers</h1>
-
-<table>
+<table class="table table-striped">
   <tr>
+    <th>Device</th>
+    <th>Type</th>
     <th>Name</th>
     <th>Ip</th>
+    <th>Service</th>
     <th>Port</th>
     <th>User</th>
     <th>Password</th>
     <th>Sysadm</th>
-    <th>Root password</th>
-    <th>Device</th>
-    <th>Type</th>
-    <th>Service</th>
+    <th>Password Root</th>
+    
+    
+    
     <th></th>
     <th></th>
     <th></th>
@@ -19,16 +20,19 @@
 
 <% @servers.each do |server| %>
   <tr>
+    <td><%= server.device.name %></td>
+    <td><%= server.type.name %></td>
     <td><%= server.name %></td>
     <td><%= server.ip %></td>
+    <td><%= server.service.name %></td>
     <td><%= server.port %></td>
     <td><%= server.user %></td>
     <td><%= server.password %></td>
-    <td><%= server.sysadm %></td>
+    <td><%= server.sysadm ? "SIM" : "NÃO"%></td>
     <td><%= server.root_password %></td>
-    <td><%= server.device.name %></td>
-    <td><%= server.type.name %></td>
-    <td><%= server.service.name %></td>
+    
+    
+   
     <td><%= link_to 'Show', server %></td>
     <td><%= link_to 'Edit', edit_server_path(server) %></td>
     <td><%= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -38,4 +42,5 @@
 
 <br />
 
-<%= link_to 'New Server', new_server_path %>
+<%= button_to 'New Server', new_server_path, :class => "btn  btn-primary", :method => :get %>
+
