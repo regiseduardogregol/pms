@@ -1,16 +1,16 @@
 Pms::Application.routes.draw do
-  get "home/index"
+  get "sessions/new"
+#  get "sessions/create"
+#  get "sessions/destroy"
+#  get "home/index"
+  get 'login', to: "sessions#new", as: "login"
+  get "logout", to: "sessions#destroy", as: "logout"
 
   resources :servers
-
-
   resources :services
-
-
   resources :types
-
-
   resources :devices
+  resources :sessions
 
 
   # The priority is based upon order of creation:

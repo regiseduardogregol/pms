@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  function deviceModal(){
+    $('#deviceModal').modal('show');
+  }
+</script>
+
 <%= form_for(@server) do |f| %>
   <% if @server.errors.any? %>
     <div id="error_explanation">
@@ -16,7 +22,8 @@
     <%= f.select :device_id, @devices.collect{|d| [d.name, d.id]} %>
     <p style="display:inline;">
       <%#= link_to "Add + ", new_device_path, :remote => true, :id => 'create-device' %>
-      <%= link_to "Adicionar +", new_device_path, :remote => true, :onclick=>"window.open(this.href,'create_device', 'height=300, width=520');return false;" %>
+      <%#= link_to "Adicionar +", new_device_path, :remote => true, :onclick=>"window.open(this.href,'create_device', 'height=300, width=520');return false;" %>
+      <%= link_to "Add +", {:controller => "devices", :action => "new"}, :onclick => "deviceModal();", :role => "button", :class => "btn", :data => { "toogle" => "modal", "target" => "#deviceModal" }, :popup => ["New Device", "height=600", "width=600"]%>
     </p>
   </div>
   <div class="field">

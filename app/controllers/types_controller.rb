@@ -1,4 +1,5 @@
 class TypesController < ApplicationController
+  before_filter :authorize
   # GET /types
   # GET /types.json
   def index

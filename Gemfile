@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'unicorn'
 
-#gem 'font-awesome-sass-rails'
+gem 'net-ldap', '0.3.1'
 
 gem 'jquery-rails'
 

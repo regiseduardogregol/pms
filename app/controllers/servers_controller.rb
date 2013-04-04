@@ -1,4 +1,5 @@
 class ServersController < ApplicationController
+  before_filter :authorize
   # GET /servers
   # GET /servers.json
   def index
@@ -27,6 +28,8 @@ class ServersController < ApplicationController
     @devices  = Device.all
     @types    = Type.all
     @services = Service.all
+
+    @device   = Device.new
     @server   = Server.new
 
     respond_to do |format|

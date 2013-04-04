@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
-  def index
-  	@servers = Server.all
-  end
+	before_filter :authorize
+	
+	  def index
+	  	@servers = Server.all
+	  end
 end

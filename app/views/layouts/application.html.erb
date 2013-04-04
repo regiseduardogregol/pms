@@ -7,22 +7,18 @@
   <meta name="description" content="PMS - Password Manager System, sistema de gerênciamento de senhas para servidor">
   <meta name="author" content="Régis Eduardo Weizenmann Gregol (regiseduardogregol@gmail.com)">
   <link rel="shortcut icon" href="/favicon.png">
-  <%= stylesheet_link_tag "bootstrap", "bootstrap.min", "bootstrap-responsive", "font-awesome.min", "font-awesome", :media => "all" %>
+  <%= stylesheet_link_tag "application", "bootstrap", "bootstrap.min", "bootstrap-responsive", "font-awesome.min", "font-awesome", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
-	    <div class="container">
-	    	<form class="form-search icon-search" style="margin-top:10px;float:right;">
-			  <input type="text" class="input-medium search-query">
-			  <button type="submit" class="btn btn-mini btn-primary">Search</button>
-			</form>
-	    	<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	   <div class="container">
+	    	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
-          	</button>
+          	</a>
 	        <%= link_to "PMS", root_path, :class => "brand icon-key" %>
 	        <div class="nav-collapse collapse">
 	        	<ul class="nav">
@@ -30,19 +26,22 @@
 					<!--
 					<li class="<%= 'active' if params[:controller] == 'servers' %>"><%= link_to "List", servers_path %></li>
 					<li class="<%= 'active' if params[:controller] == 'servers' %>"><%= link_to "Group", servers_path %></li>
-					<li class="<%= 'active' if params[:controller] == 'servers' %>"><%= link_to "Events", servers_path %></li>-->
+					<li class="<%= 'active' if params[:controller] == 'servers' %>"><%= link_to "Events", servers_path %></li>
+					-->
 				</ul>
 	        </div>
-        </div>
+       </div>
     </div>
 </div>
 	<div class="container">
 		<%= yield %>
 	</div>
-	<hr>
-	<footer>
-	    <p>&copy; Password Manager System — 2013</p>
-	</footer>
-	<%= javascript_include_tag "application", "bootstrap" %>
+	<div class="container">
+		<hr>
+		<footer>
+		    <p>&copy; Password Manager System — 2013</p>
+		</footer>
+	</div>
+		<%= javascript_include_tag "application", "bootstrap" %>
 	</body>
 </html>
