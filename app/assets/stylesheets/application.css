@@ -9,6 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.ui.all
+ *= require jquery.modal
  *= require_tree .
  */
 /*@font-face{font-family:'FontAwesome';src:url("/assets/fontawesome-webfont.eot");src:url("/assets/fontawesome-webfont.eot?#iefix"),url("/assets/fontawesome-webfont.woff"),url("/assets/fontawesome-webfont.ttf"),url("/assets/fontawesome-webfont.svg#FontAwesome");font-weight:normal;font-style:normal}*/

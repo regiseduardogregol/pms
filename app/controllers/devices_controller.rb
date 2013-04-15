@@ -1,5 +1,5 @@
 class DevicesController < ApplicationController
-  before_filter :authorize
+  #before_filter :authorize
   # GET /devices
   # GET /devices.json
   def index
@@ -30,6 +30,7 @@ class DevicesController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @device }
+      format.js
     end
   end
 
@@ -45,8 +46,8 @@ class DevicesController < ApplicationController
 
     respond_to do |format|
       if @device.save
-        format.html { redirect_to new_device_path }
-        #format.html { redirect_to @device, notice: 'Device was successfully created.' }
+        #format.html { redirect_to new_device_path }
+        format.html { redirect_to @device, notice: 'Device was successfully created.' }
         format.json { render json: @device, status: :created, location: @device }
       else
         format.html { render action: "new" }

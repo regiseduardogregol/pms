@@ -1,5 +1,5 @@
 class ServersController < ApplicationController
-  before_filter :authorize
+  #before_filter :authorize
   # GET /servers
   # GET /servers.json
   def index
@@ -35,6 +35,7 @@ class ServersController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @server }
+      #format.js
     end
   end
 
@@ -52,6 +53,7 @@ class ServersController < ApplicationController
       if @server.save
         format.html { redirect_to @server, notice: 'Server was successfully created.' }
         format.json { render json: @server, status: :created, location: @server }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @server.errors, status: :unprocessable_entity }

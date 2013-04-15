@@ -1,3 +1,8 @@
+<script>
+$(document).on('click', 'a#close-modal', function(e) {
+  alert("maeo");
+});
+</script>
 <%= form_for(@device) do |f| %>
   <% if @device.errors.any? %>
     <div id="error_explanation">
