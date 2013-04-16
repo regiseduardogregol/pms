@@ -9,13 +9,13 @@ class CreateServers < ActiveRecord::Migration
       t.boolean :sysadm
       t.string :root_password
       t.references :device
-      t.references :type
+      t.references :category
       t.references :service
 
       t.timestamps
     end
     add_index :servers, :device_id
-    add_index :servers, :type_id
+    add_index :servers, :category_id
     add_index :servers, :service_id
   end
 end

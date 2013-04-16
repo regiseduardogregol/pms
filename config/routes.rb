@@ -1,14 +1,11 @@
 Pms::Application.routes.draw do
   get "sessions/new"
-#  get "sessions/create"
-#  get "sessions/destroy"
-#  get "home/index"
   get 'login', to: "sessions#new", as: "login"
   get "logout", to: "sessions#destroy", as: "logout"
 
   resources :servers
   resources :services
-  resources :types
+  resources :categories
   resources :devices
   resources :sessions
 
@@ -63,6 +60,15 @@ Pms::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'home#index'
+
+  scope "/:locale" do
+    resources :homes, :only => [:index]
+    resources :devices, :only => [ :index, :show, :edit, :update ]
+    resources :servers, :only => [ :index, :show, :edit, :update ]
+    resources :services, :only => [ :index, :show, :edit, :update ]
+    #resources :types, :only => [ :index, :show, :edit, :update ]
+    resources :categories, :only => [:index, :show, :edit, :update]
+  end
 
   # See how all your routes lay out with "rake routes"
 

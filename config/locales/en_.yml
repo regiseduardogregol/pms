@@ -1,0 +1,22 @@
+en:
+    pms:
+        title: "Password Management System"
+        print: "Print"
+        print_title: "Click to Print or press 'Ctrl + P'"
+        warn: "Important Message!"
+        msg: "message"
+        public_access: "Public Access"
+        no_permission: "No Permission"
+
+    sessions:
+        login: "Login"
+        logout: "Logout"
+        user: "User"
+        password: "Password"
+        msg: "You must be logged."
+
+    #HTML estático
+    devices:
+        title: "Devices"
+        id: "ID"
+        name: "Name"

@@ -1,7 +1,7 @@
 <table class="table table-striped">
   <tr>
     <th>Device</th>
-    <th>Type</th>
+    <th>Category</th>
     <th>Name</th>
     <th>Ip</th>
     <th>Service</th>
@@ -10,9 +10,6 @@
     <th>Password</th>
     <th>Sysadm</th>
     <th>Password Root</th>
-    
-    
-    
     <th></th>
     <th></th>
     <th></th>
@@ -21,7 +18,7 @@
 <% @servers.each do |server| %>
   <tr>
     <td><%= server.device.name %></td>
-    <td><%= server.type.name %></td>
+    <td><%= server.category.name %></td>
     <td><%= server.name %></td>
     <td><%= server.ip %></td>
     <td><%= server.service.name %></td>
@@ -30,12 +27,10 @@
     <td><%= server.password %></td>
     <td><%= server.sysadm ? "SIM" : "NÃO"%></td>
     <td><%= server.root_password %></td>
-    
-    
-   
-    <td><%= link_to 'Show', server %></td>
-    <td><%= link_to 'Edit', edit_server_path(server) %></td>
-    <td><%= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <td><%= link_to '', server, :class => "icon-eye-open" %></td>
+    <td><%= link_to '', edit_server_path(server), :class => "icon-edit" %></td>
+    <td><%= link_to '', server, :class => "icon-remove", method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
@@ -43,4 +38,5 @@
 <br />
 
 <%= button_to 'New Server', new_server_path, :class => "btn  btn-primary", :method => :get %>
+<%= button_to "Print", "", :class => "btn btn-primary pull-right", :onclick => "window.print(); return false;", :title => "Clique para Imprimir ou pressione as teclas 'Ctrl + P'" %>
 

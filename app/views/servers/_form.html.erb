@@ -1,15 +1,7 @@
 <script type="text/javascript">
   function deviceModal(){
     $('#deviceModal').modal('show');
-
-    var myBackup = $('#deviceModal').clone();
-
-    // Delegated events because we make a copy, and the copied button does not exist onDomReady
-    $('select').on('click','#select_device_id',function() {
-        //$('#deviceModal').modal('hide').remove();
-        var myClone = myBackup.clone();
-        $('select#select_device_id').append(myClone);
-    });
+    $('#categoryModal').modal('show');
   }  
 </script>
 
@@ -29,17 +21,12 @@
   <div class="field">
     <%= f.label :device %><br />
     <%= f.select :device_id, @devices.collect{|d| [d.name, d.id]} %>
-    <!--<%#= link_to_modal "Add Device", new_device_path%>-->
     <%= link_to_modal 'Add Device', new_device_path, :width=> "600", :height =>"400", :remote => true %>
   </div>
   <div class="field">
-    <%= f.label :type %><br />
-    <%= f.select :type_id, @types.collect{|t| [t.name, t.id]} %>
-    <p style="display:inline;">
-      <%= link_to "Adicionar +", new_type_path, :remote => true, :onclick=>"window.open(this.href,'create_type', 'height=600, width=600');return false;" %>
-    </p>
-
-  <div cla
+    <%= f.label :category %><br />
+    <%= f.select :category_id, @categories.collect{|t| [t.name, t.id]} %>
+    <%= link_to_modal 'Add Category', new_category_path, :width=> "600", :height =>"400", :remote => true %>
   </div>
   <div class="field">
     <%= f.label :name %><br />
@@ -52,9 +39,7 @@
   <div class="field">
     <%= f.label :service %><br />
     <%= f.select :service_id, @services.collect{|s| [s.name, s.id]} %>
-    <p style="display:inline;">
-      <%= link_to "Adicionar +", new_service_path, :remote => true, :onclick=>"window.open(this.href,'create_service', 'height=600, width=600');return false;" %>
-    </p>
+    <%= link_to_modal 'Add Service', new_service_path, :width=> "600", :height =>"400", :remote => true %>
   </div>
   <div class="field">
     <%= f.label :port %><br />

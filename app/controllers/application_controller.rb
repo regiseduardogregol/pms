@@ -1,7 +1,17 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  #private 
+  #before_filter :set_locale
+  
+  #protected
+
+  #def set_locale
+  #  I18n.locale = params[:locale] if params.include?('locale')
+  #end
+
+  #def default_url_options(options={})	options.merge!({:locale => I18n.locale}) end
+
+  
 
   #def current_user
   #	@current_user ||= session[:user]

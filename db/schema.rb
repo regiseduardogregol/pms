@@ -13,6 +13,12 @@
 
 ActiveRecord::Schema.define(:version => 20130130184444) do
 
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "devices", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -28,23 +34,17 @@ ActiveRecord::Schema.define(:version => 20130130184444) do
     t.boolean  "sysadm"
     t.string   "root_password"
     t.integer  "device_id"
-    t.integer  "type_id"
+    t.integer  "category_id"
     t.integer  "service_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
+  add_index "servers", ["category_id"], :name => "index_servers_on_category_id"
   add_index "servers", ["device_id"], :name => "index_servers_on_device_id"
   add_index "servers", ["service_id"], :name => "index_servers_on_service_id"
-  add_index "servers", ["type_id"], :name => "index_servers_on_type_id"
 
   create_table "services", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

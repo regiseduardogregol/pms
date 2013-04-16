@@ -25,9 +25,9 @@ class ServersController < ApplicationController
   # GET /servers/new
   # GET /servers/new.json
   def new
-    @devices  = Device.all
-    @types    = Type.all
-    @services = Service.all
+    @devices       = Device.all
+    @categories    = Category.all
+    @services      = Service.all
 
     @device   = Device.new
     @server   = Server.new
@@ -35,7 +35,6 @@ class ServersController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @server }
-      #format.js
     end
   end
 
@@ -53,7 +52,6 @@ class ServersController < ApplicationController
       if @server.save
         format.html { redirect_to @server, notice: 'Server was successfully created.' }
         format.json { render json: @server, status: :created, location: @server }
-        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @server.errors, status: :unprocessable_entity }

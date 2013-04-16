@@ -1,6 +1,6 @@
-<h1>Listing devices</h1>
+<h1>Listing Devices</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Name</th>
     <th></th>
@@ -19,5 +19,4 @@
 </table>
 
 <br />
-
-<%= link_to 'New Device', new_device_path %>
+<%= button_to 'New Device', new_device_path, :class => "btn  btn-primary", :method => :get %>

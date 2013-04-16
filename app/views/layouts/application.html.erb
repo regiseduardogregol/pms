@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Pms</title>
   <meta charset="utf-8">
+  <title>PMS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="PMS - Password Manager System, sistema de gerênciamento de senhas para servidor">
   <meta name="author" content="Régis Eduardo Weizenmann Gregol (regiseduardogregol@gmail.com)">
@@ -23,11 +23,9 @@
 	        <div class="nav-collapse collapse">
 	        	<ul class="nav">
 					<li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to "Home", root_path %></li>
-					<!--
-					<li class="<%= 'active' if params[:controller] == 'servers' %>"><%= link_to "List", servers_path %></li>
-					<li class="<%= 'active' if params[:controller] == 'servers' %>"><%= link_to "Group", servers_path %></li>
-					<li class="<%= 'active' if params[:controller] == 'servers' %>"><%= link_to "Events", servers_path %></li>
-					-->
+					<li class="<%= 'active' if params[:controller] == 'devices' %>"><%= link_to "Devices", devices_path %></li>
+					<li class="<%= 'active' if params[:controller] == 'services' %>"><%= link_to "Services", services_path %></li>
+					<li class="<%= 'active' if params[:controller] == 'categories' %>"><%= link_to "Categories", categories_path %></li>
 				</ul>
 	        </div>
        </div>
